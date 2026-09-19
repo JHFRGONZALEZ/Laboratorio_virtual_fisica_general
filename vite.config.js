@@ -4,6 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/laboratorio-virtual-fisica/", // Cambia esto al nombre de tu repositorio
+  build: {
+    outDir: "dist",
+  },
   server: {
     host: "0.0.0.0",
     port: 3000,
