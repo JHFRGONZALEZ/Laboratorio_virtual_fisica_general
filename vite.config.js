@@ -4,9 +4,20 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/laboratorio-virtual-fisica/", // Cambia esto al nombre de tu repositorio
+  // Usar rutas relativas para compatibilidad con GitHub Pages y cualquier hosting
+  base: "./",
   build: {
     outDir: "dist",
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          charts: ["chart.js", "react-chartjs-2"],
+          state: ["zustand"],
+        },
+      },
+    },
   },
   server: {
     host: "0.0.0.0",
