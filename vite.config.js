@@ -4,10 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // Usar rutas relativas para compatibilidad con GitHub Pages y cualquier hosting
+  // Usar rutas relativas para compatibilidad con GitHub Pages
   base: "./",
   build: {
-    outDir: "dist",
+    // Generar en la carpeta "docs" para GitHub Pages
+    outDir: "docs",
     sourcemap: false,
     rollupOptions: {
       output: {
