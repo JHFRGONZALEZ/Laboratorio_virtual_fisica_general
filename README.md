@@ -5,7 +5,7 @@
 ![React](https://img.shields.io/badge/React-18-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Vite](https://img.shields.io/badge/Vite-6-purple)
-![Practices](https://img.shields.io/badge/Prácticas-2-green)
+![Practices](https://img.shields.io/badge/Prácticas-6-green)
 
 ## 🎯 Descripción
 
@@ -36,10 +36,26 @@ Plataforma web educativa que permite a los estudiantes experimentar con diferent
 - 📝 Comparación con valor teórico (9.81 m/s²)
 - 🎯 Objetivos pedagógicos completos
 
-### 🔄 Próximas Prácticas
-- 🎯 Práctica 4: Tiro Parabólico
-- ⏰ Práctica 5: Péndulo Simple
-- ⚖️ Práctica 6: Leyes de Newton
+### ✅ Práctica 4: Tiro Parabólico
+- 🎯 Simulación de movimiento de proyectiles
+- 📊 Trayectoria parabólica en tiempo real
+- 🎛️ Controles de velocidad, ángulo y gravedad
+- 🔬 Cálculo de alcance máximo y altura
+- 🎯 Encontrar el ángulo óptimo (45°)
+
+### ✅ Práctica 5: Péndulo Simple
+- ⏰ Simulación de oscilación del péndulo
+- 📏 Variación de longitud (20, 40, 60, 80, 100 cm)
+- 🔬 Cálculo experimental de g
+- 📊 Gráfica T² vs L con regresión lineal
+- 🌍 Comparación con g teórico (9.81 m/s²)
+
+### ✅ Práctica 6: Leyes de Newton
+- ⚖️ Simulación de fuerza, masa y aceleración
+- 📋 Verificación experimental de F = m·a
+- 🎛️ Controles de fuerza, masa y fricción
+- 📊 Gráfica F vs a para determinar masa
+- 🔬 Análisis de error experimental
 
 ## ✨ Características Generales
 

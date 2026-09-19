@@ -57,29 +57,29 @@ const practices: Practice[] = [
     color: 'green',
     gradient: 'from-green-500 to-emerald-500',
     topics: ['Componentes del movimiento', 'Alcance máximo', 'Altura máxima', 'Ángulo óptimo'],
-    status: 'coming-soon'
+    status: 'available'
   },
   {
     id: 'pendulo',
     title: 'Práctica 5',
     subtitle: 'Péndulo Simple',
-    description: 'Investiga el movimiento oscilatorio. Descubre la relación entre longitud, período y gravedad.',
+    description: 'Investiga el movimiento oscilatorio. Mide el período para diferentes longitudes y calcula g experimentalmente.',
     icon: '⏰',
     color: 'indigo',
     gradient: 'from-indigo-500 to-blue-500',
-    topics: ['Movimiento armónico', 'Período', 'Frecuencia', 'Longitud del péndulo'],
-    status: 'coming-soon'
+    topics: ['Cálculo de g', 'Período vs longitud', 'T² = (4π²/g)·L', 'Regresión lineal'],
+    status: 'available'
   },
   {
-    id: 'fuerzas',
+    id: 'newton',
     title: 'Práctica 6',
     subtitle: 'Leyes de Newton',
-    description: 'Experimenta con fuerzas y aceleración. Verifica la segunda ley de Newton experimentalmente.',
+    description: 'Experimenta con fuerzas y aceleración. Verifica experimentalmente que F = m·a.',
     icon: '⚖️',
     color: 'red',
     gradient: 'from-red-500 to-rose-500',
-    topics: ['Fuerza neta', 'Masa y aceleración', 'F=ma', 'Diagramas de cuerpo libre'],
-    status: 'coming-soon'
+    topics: ['F=ma', 'Fuerza neta', 'Masa y aceleración', 'Fricción'],
+    status: 'available'
   }
 ];
 
@@ -129,7 +129,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-xl p-4 shadow-md text-center"
           >
-            <div className="text-3xl font-bold text-green-600">3</div>
+            <div className="text-3xl font-bold text-green-600">6</div>
             <div className="text-sm text-gray-600">Disponibles</div>
           </motion.div>
           <motion.div
@@ -173,6 +173,9 @@ export const Home: React.FC = () => {
                   practice.id === 'mru' ? '/practica/mru' :
                   practice.id === 'mruv' ? '/practica/mruv' :
                   practice.id === 'caida-libre' ? '/practica/caida-libre' :
+                  practice.id === 'tiro-parabolico' ? '/practica/tiro-parabolico' :
+                  practice.id === 'pendulo' ? '/practica/pendulo' :
+                  practice.id === 'newton' ? '/practica/newton' :
                   `/practica/${practice.id}`
                 }>
                   <PracticeCard practice={practice} />
