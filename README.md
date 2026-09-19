@@ -28,8 +28,15 @@ Plataforma web educativa que permite a los estudiantes experimentar con diferent
 - 🔬 Análisis con regresión cuadrática
 - 📝 Sistema pedagógico completo
 
+### ✅ Práctica 3: Caída Libre
+- 🍎 Simulación de caída bajo gravedad
+- 🪐 Gravedad ajustable (Luna, Tierra, Júpiter)
+- 📊 Medición de tiempo de caída y velocidad final
+- 🔬 Cálculo experimental de g
+- 📝 Comparación con valor teórico (9.81 m/s²)
+- 🎯 Objetivos pedagógicos completos
+
 ### 🔄 Próximas Prácticas
-- 🍎 Práctica 3: Caída Libre
 - 🎯 Práctica 4: Tiro Parabólico
 - ⏰ Práctica 5: Péndulo Simple
 - ⚖️ Práctica 6: Leyes de Newton
@@ -94,27 +101,32 @@ https://jhfrgonzalez.github.io/Laboratorio_virtual_fisica_general/
 ```
 src/
 ├── components/
-│   ├── Home.tsx                    # Página de inicio
+│   ├── Home.tsx                    # Página de inicio (Dashboard)
 │   ├── simulation/                 # Componentes MRU
 │   ├── analysis/                   # Gráficas y análisis MRU
 │   ├── pedagogy/                   # Preguntas y logros MRU
 │   ├── mruv/                       # Componentes MRUV
+│   ├── freefall/                   # Componentes Caída Libre
 │   └── ui/                         # Componentes reutilizables
 ├── pages/
 │   ├── MRUPractice.tsx            # Página completa MRU
-│   └── MRUVPractice.tsx           # Página completa MRUV
+│   ├── MRUVPractice.tsx           # Página completa MRUV
+│   └── FreeFallPractice.tsx       # Página completa Caída Libre
 ├── store/
 │   ├── labStore.ts                # Estado global MRU
-│   └── mruvStore.ts               # Estado global MRUV
+│   ├── mruvStore.ts               # Estado global MRUV
+│   └── freefallStore.ts           # Estado global Caída Libre
 ├── types/
 │   ├── simulation.types.ts        # Tipos MRU
-│   └── mruv.types.ts              # Tipos MRUV
+│   ├── mruv.types.ts              # Tipos MRUV
+│   └── freefall.types.ts          # Tipos Caída Libre
 ├── hooks/
 │   ├── useSimulation.ts           # Hook simulación MRU
 │   └── useSimulationMRUV.ts       # Hook simulación MRUV
 └── utils/
     ├── physicsCalculations.ts     # Cálculos MRU
     ├── mruvCalculations.ts        # Cálculos MRUV
+    ├── freefallCalculations.ts    # Cálculos Caída Libre
     └── exportReport.ts            # Exportación PDF
 ```
 

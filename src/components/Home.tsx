@@ -45,8 +45,8 @@ const practices: Practice[] = [
     icon: '🍎',
     color: 'orange',
     gradient: 'from-orange-500 to-red-500',
-    topics: ['Gravedad', 'Tiempo de caída', 'Cálculo de g', 'Resistencia del aire'],
-    status: 'coming-soon'
+    topics: ['Gravedad', 'Tiempo de caída', 'Cálculo de g', 'Gravedad planetaria'],
+    status: 'available'
   },
   {
     id: 'tiro-parabolico',
@@ -129,7 +129,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-xl p-4 shadow-md text-center"
           >
-            <div className="text-3xl font-bold text-green-600">2</div>
+            <div className="text-3xl font-bold text-green-600">3</div>
             <div className="text-sm text-gray-600">Disponibles</div>
           </motion.div>
           <motion.div
@@ -169,7 +169,12 @@ export const Home: React.FC = () => {
               transition={{ delay: 0.6 + index * 0.1 }}
             >
               {practice.status === 'available' ? (
-                <Link to={`/practica/${practice.id}`}>
+                <Link to={
+                  practice.id === 'mru' ? '/practica/mru' :
+                  practice.id === 'mruv' ? '/practica/mruv' :
+                  practice.id === 'caida-libre' ? '/practica/caida-libre' :
+                  `/practica/${practice.id}`
+                }>
                   <PracticeCard practice={practice} />
                 </Link>
               ) : (
