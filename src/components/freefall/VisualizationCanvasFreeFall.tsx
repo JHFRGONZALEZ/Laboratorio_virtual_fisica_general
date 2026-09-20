@@ -26,7 +26,7 @@ export const VisualizationCanvasFreeFall: React.FC = () => {
     const canvasHeight = canvas.height;
 
     // Clear canvas
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, width, canvasHeight);
 
     // Sky gradient background
     const bgGrad = ctx.createLinearGradient(0, 0, 0, canvasHeight);
