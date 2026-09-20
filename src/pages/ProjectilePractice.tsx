@@ -30,8 +30,8 @@ export const ProjectilePractice: React.FC = () => {
       if (!lastTimeRef.current) lastTimeRef.current = timestamp;
       const dt = (timestamp - lastTimeRef.current) / 1000;
       lastTimeRef.current = timestamp;
-      if (dt > 0 && dt < 0.1) {
-        useLabStoreProjectile.getState().updatePosition(dt);
+      if (dt > 0) {
+        useLabStoreProjectile.getState().updatePosition(Math.min(dt, 0.05));
       }
       animationRef.current = requestAnimationFrame(animate);
     };

@@ -1,5 +1,10 @@
 # 🚀 Guía de Despliegue - Laboratorio Virtual de Física
 
+Repositorio y sitio publicados:
+
+- Repositorio: https://github.com/JHFRGONZALEZ/Laboratorio_virtual_fisica_general
+- Sitio: https://jhfrgonzalez.github.io/Laboratorio_virtual_fisica_general/
+
 ## ✅ Tu proyecto está listo para compartir
 
 Esta guía te explica paso a paso cómo publicar tu laboratorio virtual en GitHub Pages para que cualquier persona pueda acceder con un link.
@@ -8,10 +13,8 @@ Esta guía te explica paso a paso cómo publicar tu laboratorio virtual en GitHu
 
 ## 📋 Paso 1: Crear el repositorio en GitHub
 
-1. Ve a [github.com/new](https://github.com/new)
-2. Nombre del repositorio: `laboratorio-virtual-fisica` (o el que prefieras)
-3. **NO** marques "Add a README file" (ya lo tenemos)
-4. Haz clic en **Create repository**
+1. Usa el repositorio existente `JHFRGONZALEZ/Laboratorio_virtual_fisica_general`.
+2. Si se crea otro repositorio, conserva el nombre exacto para que coincida con la URL publicada.
 
 ---
 
@@ -29,8 +32,8 @@ git add .
 # Primer commit
 git commit -m "🔬 Laboratorio Virtual de Física - MRU"
 
-# Conectar con GitHub (cambia TU-USUARIO por tu usuario de GitHub)
-git remote add origin https://github.com/TU-USUARIO/laboratorio-virtual-fisica.git
+# Conectar con GitHub
+git remote add origin https://github.com/JHFRGONZALEZ/Laboratorio_virtual_fisica_general.git
 
 # Subir el código
 git branch -M main
@@ -39,7 +42,24 @@ git push -u origin main
 
 ---
 
-## 📋 Paso 3: Activar GitHub Pages con Actions
+## 📋 Paso 3: Preparar y publicar una actualización
+
+Desde la carpeta del proyecto ejecuta:
+
+```bash
+npm ci
+npm run build
+```
+
+El comando `build` genera la versión publicable dentro de `docs/`. Comprueba que exista `docs/index.html` y después sube los cambios:
+
+```bash
+git add src docs DEPLOY.md
+git commit -m "Corrige simulaciones de caída libre y proyectiles"
+git push origin main
+```
+
+## 📋 Paso 4: Activar GitHub Pages con Actions
 
 1. Ve a tu repositorio en GitHub
 2. Haz clic en **Settings** (Configuración)
@@ -49,7 +69,7 @@ git push -u origin main
 
 ---
 
-## 📋 Paso 4: Esperar el despliegue
+## 📋 Paso 5: Esperar el despliegue
 
 1. Ve a la pestaña **Actions** en tu repositorio
 2. Verás el workflow "Build and Deploy" ejecutándose
@@ -58,19 +78,19 @@ git push -u origin main
 
 ---
 
-## 📋 Paso 5: ¡Compartir!
+## 📋 Paso 6: ¡Compartir!
 
-Tu sitio estará disponible en:
-
-```
-https://TU-USUARIO.github.io/laboratorio-virtual-fisica/
-```
-
-### Ejemplo:
-Si tu usuario es `jhfrgonzalez` y el repo se llama `laboratorio-virtual-fisica`:
+Tu sitio está disponible en:
 
 ```
-https://jhfrgonzalez.github.io/laboratorio-virtual-fisica/
+https://jhfrgonzalez.github.io/Laboratorio_virtual_fisica_general/
+```
+
+El proyecto usa `HashRouter`, por lo que las prácticas se abren con estas rutas:
+
+```
+https://jhfrgonzalez.github.io/Laboratorio_virtual_fisica_general/#/practica/caida-libre
+https://jhfrgonzalez.github.io/Laboratorio_virtual_fisica_general/#/practica/tiro-parabolico
 ```
 
 ---
@@ -86,7 +106,7 @@ git commit -m "Mejoras en la simulación"
 git push
 ```
 
-En ~2 minutos, los cambios estarán en línea.
+En ~2 minutos, los cambios estarán en línea. Si GitHub Pages publica directamente la carpeta `docs`, conserva el build generado antes de hacer push.
 
 ---
 

@@ -23,21 +23,21 @@ export const VisualizationCanvasFreeFall: React.FC = () => {
     if (!ctx) return;
 
     const width = canvas.width;
-    const height = canvas.height;
+    const canvasHeight = canvas.height;
 
     // Clear canvas
     ctx.clearRect(0, 0, width, height);
 
     // Sky gradient background
-    const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
+    const bgGrad = ctx.createLinearGradient(0, 0, 0, canvasHeight);
     bgGrad.addColorStop(0, '#fef3c7');
     bgGrad.addColorStop(0.7, '#fde68a');
     bgGrad.addColorStop(1, '#92400e');
     ctx.fillStyle = bgGrad;
-    ctx.fillRect(0, 0, width, height);
+    ctx.fillRect(0, 0, width, canvasHeight);
 
     // Ground
-    const groundY = height - 50;
+    const groundY = canvasHeight - 50;
     ctx.fillStyle = '#78350f';
     ctx.fillRect(0, groundY, width, 50);
     
@@ -258,7 +258,7 @@ export const VisualizationCanvasFreeFall: React.FC = () => {
     ctx.fillText(
       `y(t) = ${initialHeight.toFixed(1)} - ½(${gravity.toFixed(2)})t²`,
       width / 2,
-      height - 15
+      canvasHeight - 15
     );
 
     // Landed indicator
@@ -266,19 +266,19 @@ export const VisualizationCanvasFreeFall: React.FC = () => {
       ctx.font = 'bold 24px sans-serif';
       ctx.fillStyle = '#dc2626';
       ctx.textAlign = 'center';
-      ctx.fillText('💥 ¡IMPACTO!', width / 2, height / 2);
+      ctx.fillText('💥 ¡IMPACTO!', width / 2, canvasHeight / 2);
     }
 
     // Running indicator
     if (isRunning && !hasLanded) {
       ctx.beginPath();
-      ctx.arc(width - 25, height - 25, 6, 0, Math.PI * 2);
+      ctx.arc(width - 25, canvasHeight - 25, 6, 0, Math.PI * 2);
       ctx.fillStyle = '#22c55e';
       ctx.fill();
       ctx.font = '10px sans-serif';
       ctx.fillStyle = '#374151';
       ctx.textAlign = 'right';
-      ctx.fillText('CAYENDO', width - 38, height - 21);
+      ctx.fillText('CAYENDO', width - 38, canvasHeight - 21);
     }
   }, [height, velocity, gravity, initialHeight, time, showVelocityVector, showTrail, trailPoints, isRunning, hasLanded]);
 
