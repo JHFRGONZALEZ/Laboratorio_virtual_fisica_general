@@ -70,6 +70,12 @@ Plataforma web educativa que permite a los estudiantes experimentar con diferent
 - 🏆 **Sistema de logros** gamificado
 - 🎲 **Modo error experimental** para simular imprecisiones
 
+## 🔐 Acceso, historial y reportes
+
+El laboratorio incluye acceso mediante enlace enviado al correo institucional (`@unadvirtual.edu.co` o `@unad.edu.co`), historial privado por estudiante y reportes imprimibles para las seis prácticas. La configuración paso a paso está en [docs/AUTENTICACION-HISTORIAL.md](docs/AUTENTICACION-HISTORIAL.md).
+
+La aplicación usa Supabase con políticas RLS: cada estudiante solo puede consultar sus propios experimentos. Las claves se configuran como variables de entorno y nunca se guardan en Git.
+
 ## 🚀 Despliegue en GitHub Pages
 
 ### Paso 1: Subir el código

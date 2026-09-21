@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Link as RouterLink } from 'react-router-dom';
+import { useAuthStore } from '../store/authStore';
 
 interface Practice {
   id: string;
@@ -84,10 +86,14 @@ const practices: Practice[] = [
 ];
 
 export const Home: React.FC = () => {
+  const { user, signOut } = useAuthStore();
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md shadow-sm border-b border-blue-100">
+        <div className="flex justify-end gap-2 px-4 pt-4 text-sm">
+          {user ? <><RouterLink to="/historial" className="rounded-lg bg-blue-50 px-3 py-2 text-blue-700">Mi historial</RouterLink><button onClick={() => void signOut()} className="rounded-lg bg-gray-100 px-3 py-2 text-gray-700">Cerrar sesión</button></> : <RouterLink to="/acceso" className="rounded-lg bg-blue-600 px-3 py-2 font-medium text-white">Acceso institucional</RouterLink>}
+        </div>
         <div className="container mx-auto px-4 py-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}

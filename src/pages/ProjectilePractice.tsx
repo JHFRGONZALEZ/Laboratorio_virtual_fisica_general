@@ -5,6 +5,7 @@ import { useLabStoreProjectile } from '../store/projectileStore';
 import { analyzeProjectileMotion } from '../utils/projectileCalculations';
 import { PedagogicalPhaseProjectile } from '../types/projectile.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
+import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 export const ProjectilePractice: React.FC = () => {
   const { initialVelocity, setInitialVelocity, angle, setAngle, gravity, setGravity, isRunning, toggleRunning, reset, hasLanded, showVelocityVector, setShowVelocityVector, showTrail, setShowTrail, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStoreProjectile();
@@ -432,6 +433,7 @@ export const ProjectilePractice: React.FC = () => {
           </div>
         )}
       </main>
+      <SaveExperimentButton practiceId="tiro-parabolico" title="Experimento de Tiro Parabólico" getPayload={() => ({ ...useLabStoreProjectile.getState(), savedAt: new Date().toISOString() })} />
 
       {/* Footer */}
       <footer className="bg-white/60 border-t border-gray-200 py-4">

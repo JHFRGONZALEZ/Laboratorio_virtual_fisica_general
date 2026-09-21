@@ -6,6 +6,7 @@ import { useLabStoreFreeFall } from '../store/freefallStore';
 import { analyzeDataFreeFall } from '../utils/freefallCalculations';
 import { PedagogicalPhaseFreeFall } from '../types/freefall.types';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
+import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 export const FreeFallPractice: React.FC = () => {
   const { 
@@ -424,6 +425,7 @@ export const FreeFallPractice: React.FC = () => {
           </div>
         )}
       </main>
+      <SaveExperimentButton practiceId="caida-libre" title="Experimento de Caída Libre" getPayload={() => ({ ...useLabStoreFreeFall.getState(), savedAt: new Date().toISOString() })} />
 
       {/* Footer */}
       <footer className="bg-white/60 border-t border-gray-200 py-4">

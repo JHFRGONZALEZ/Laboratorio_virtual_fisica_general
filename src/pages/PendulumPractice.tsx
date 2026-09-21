@@ -5,6 +5,7 @@ import { useLabStorePendulum } from '../store/pendulumStore';
 import { calculateTheoreticalPeriod, analyzePendulumData } from '../utils/pendulumCalculations';
 import { PedagogicalPhasePendulum } from '../types/pendulum.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
+import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 export const PendulumPractice: React.FC = () => {
   const { length, setLength, gravity, setGravity, isRunning, toggleRunning, reset, showAngle, setShowAngle, showTrail, setShowTrail, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStorePendulum();
@@ -423,6 +424,7 @@ export const PendulumPractice: React.FC = () => {
           </div>
         )}
       </main>
+      <SaveExperimentButton practiceId="pendulo" title="Experimento de Péndulo Simple" getPayload={() => ({ ...useLabStorePendulum.getState(), savedAt: new Date().toISOString() })} />
 
       {/* Footer */}
       <footer className="bg-white/60 border-t border-gray-200 py-4">

@@ -1,0 +1,17 @@
+function escapeHtml(value: string): string {
+  return value.replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character] ?? character));
+}
+
+function renderValue(value: unknown): string {
+  if (Array.isArray(value)) return `<ul>${value.map(item => `<li>${renderValue(item)}</li>`).join('')}</ul>`;
+  if (value && typeof value === 'object') return `<dl>${Object.entries(value as Record<string, unknown>).filter(([, item]) => typeof item !== 'function').map(([key, item]) => `<dt>${escapeHtml(key)}</dt><dd>${renderValue(item)}</dd>`).join('')}</dl>`;
+  return escapeHtml(String(value ?? ''));
+}
+
+export function openExperimentReport(title: string, payload: Record<string, unknown>): void {
+  const report = window.open('', '_blank');
+  if (!report) return;
+  report.document.write(`<!doctype html><html><head><title>${escapeHtml(title)}</title><style>body{font-family:Arial,sans-serif;padding:24px;color:#1f2937}h1{color:#1d4ed8;border-bottom:2px solid #93c5fd;padding-bottom:8px}dl{display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:8px;border-bottom:1px solid #e5e7eb;padding:8px 0}dt{font-weight:700;color:#374151}dd{margin:0;word-break:break-word}li{margin:4px 0}</style></head><body><h1>${escapeHtml(title)}</h1><p>Generado: ${new Date().toLocaleString()}</p>${renderValue(payload)}</body></html>`);
+  report.document.close();
+  report.print();
+}

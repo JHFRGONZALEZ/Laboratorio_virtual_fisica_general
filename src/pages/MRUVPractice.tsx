@@ -6,6 +6,7 @@ import { useLabStoreMRUV } from '../store/mruvStore';
 import { useSimulationMRUV } from '../hooks/useSimulationMRUV';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X } from 'lucide-react';
 import { PedagogicalPhaseMRUV } from '../types/mruv.types';
+import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 const phases: { key: PedagogicalPhaseMRUV; label: string; icon: React.ReactNode; description: string }[] = [
   { key: 'exploration', label: 'Exploración', icon: <FlaskConical size={16} />, description: 'Experimenta libremente con la aceleración' },
@@ -194,6 +195,7 @@ export const MRUVPractice: React.FC = () => {
           </div>
         </div>
       </main>
+      <SaveExperimentButton practiceId="mruv" title="Experimento MRUV" getPayload={() => ({ ...useLabStoreMRUV.getState(), savedAt: new Date().toISOString() })} />
 
       {/* Footer */}
       <footer className="bg-white/60 border-t border-gray-200 py-4">

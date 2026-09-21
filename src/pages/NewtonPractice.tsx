@@ -5,6 +5,7 @@ import { useLabStoreNewton } from '../store/newtonStore';
 import { analyzeNewtonData } from '../utils/newtonCalculations';
 import { PedagogicalPhaseNewton } from '../types/newton.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
+import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 export const NewtonPractice: React.FC = () => {
   const { force, setForce, mass, setMass, friction, setFriction, isRunning, toggleRunning, reset, showForceVector, setShowForceVector, showAccelerationVector, setShowAccelerationVector, showFriction, setShowFriction, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStoreNewton();
@@ -423,6 +424,7 @@ export const NewtonPractice: React.FC = () => {
           </div>
         )}
       </main>
+      <SaveExperimentButton practiceId="newton" title="Experimento de Leyes de Newton" getPayload={() => ({ ...useLabStoreNewton.getState(), savedAt: new Date().toISOString() })} />
 
       {/* Footer */}
       <footer className="bg-white/60 border-t border-gray-200 py-4">

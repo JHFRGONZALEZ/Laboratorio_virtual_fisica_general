@@ -13,6 +13,7 @@ import { AchievementPanel } from '../components/pedagogy/AchievementPanel';
 import { ComparisonView } from '../components/analysis/ComparisonView';
 import { ToastProvider } from '../components/ui/Toast';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X } from 'lucide-react';
+import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 const phases: { key: PedagogicalPhase; label: string; icon: React.ReactNode; description: string }[] = [
   { key: 'exploration', label: 'Exploración', icon: <FlaskConical size={16} />, description: 'Experimenta libremente con los controles' },
@@ -288,6 +289,7 @@ const MRUPractice: React.FC = () => {
           </div>
         )}
       </main>
+      <SaveExperimentButton practiceId="mru" title="Experimento MRU" getPayload={() => ({ ...useLabStore.getState(), savedAt: new Date().toISOString() })} />
 
       {/* Footer */}
       <footer className="bg-white/60 border-t border-gray-200 py-4">
