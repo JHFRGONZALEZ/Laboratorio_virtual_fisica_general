@@ -1,7 +1,7 @@
 create table if not exists public.experiment_history (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users(id) on delete cascade,
-  practice_id text not null check (practice_id in ('mru', 'mruv', 'caida-libre', 'tiro-parabolico', 'pendulo', 'newton', 'hooke')),
+  practice_id text not null check (practice_id in ('mru', 'mruv', 'caida-libre', 'tiro-parabolico', 'pendulo', 'newton', 'hooke', 'energy')),
   title text not null,
   payload jsonb not null default '{}'::jsonb,
   created_at timestamptz not null default now()
@@ -12,7 +12,7 @@ alter table public.experiment_history
 
 alter table public.experiment_history
   add constraint experiment_history_practice_id_check
-  check (practice_id in ('mru', 'mruv', 'caida-libre', 'tiro-parabolico', 'pendulo', 'newton', 'hooke'));
+  check (practice_id in ('mru', 'mruv', 'caida-libre', 'tiro-parabolico', 'pendulo', 'newton', 'hooke', 'energy'));
 
 create index if not exists experiment_history_user_created_idx
   on public.experiment_history(user_id, created_at desc);

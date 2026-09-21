@@ -93,6 +93,17 @@ const practices: Practice[] = [
     gradient: 'from-cyan-500 to-blue-500',
     topics: ['F = k·x', 'Constante elástica', 'Regresión lineal', 'Límite elástico'],
     status: 'available'
+  },
+  {
+    id: 'energia',
+    title: 'Práctica 8',
+    subtitle: 'Conservación de la Energía Mecánica',
+    description: 'Analiza la transformación entre energía potencial y cinética en un plano inclinado con fricción.',
+    icon: '⚡',
+    color: 'cyan',
+    gradient: 'from-cyan-500 to-blue-600',
+    topics: ['Energía potencial', 'Energía cinética', 'Fricción', 'Error energético'],
+    status: 'available'
   }
 ];
 
@@ -138,7 +149,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="bg-white rounded-xl p-4 shadow-md text-center"
           >
-            <div className="text-3xl font-bold text-blue-600">7</div>
+            <div className="text-3xl font-bold text-blue-600">8</div>
             <div className="text-sm text-gray-600">Prácticas</div>
           </motion.div>
           <motion.div
@@ -147,7 +158,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-xl p-4 shadow-md text-center"
           >
-            <div className="text-3xl font-bold text-green-600">7</div>
+            <div className="text-3xl font-bold text-green-600">8</div>
             <div className="text-sm text-gray-600">Disponibles</div>
           </motion.div>
           <motion.div
@@ -195,6 +206,7 @@ export const Home: React.FC = () => {
                   practice.id === 'pendulo' ? '/practica/pendulo' :
                   practice.id === 'newton' ? '/practica/newton' :
                   practice.id === 'hooke' ? '/practica/hooke' :
+                  practice.id === 'energia' ? '/practica/energia' :
                   `/practica/${practice.id}`
                 }>
                   <PracticeCard practice={practice} />
