@@ -4,7 +4,7 @@ import { useAuthStore } from '../store/authStore';
 import { listExperiments } from '../services/historyService';
 import type { ExperimentHistory } from '../types/history.types';
 
-const labels: Record<string, string> = { mru: 'MRU', mruv: 'MRUV', 'caida-libre': 'Caída Libre', 'tiro-parabolico': 'Tiro Parabólico', pendulo: 'Péndulo Simple', newton: 'Leyes de Newton' };
+const labels: Record<string, string> = { mru: 'MRU', mruv: 'MRUV', 'caida-libre': 'Caída Libre', 'tiro-parabolico': 'Tiro Parabólico', pendulo: 'Péndulo Simple', newton: 'Leyes de Newton', hooke: 'Ley de Hooke' };
 
 export const HistoryPage: React.FC = () => {
   const { user, signOut } = useAuthStore();

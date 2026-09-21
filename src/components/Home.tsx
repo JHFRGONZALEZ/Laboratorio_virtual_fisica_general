@@ -82,6 +82,17 @@ const practices: Practice[] = [
     gradient: 'from-red-500 to-rose-500',
     topics: ['F=ma', 'Fuerza neta', 'Masa y aceleración', 'Fricción'],
     status: 'available'
+  },
+  {
+    id: 'hooke',
+    title: 'Práctica 7',
+    subtitle: 'Ley de Hooke y Resortes',
+    description: 'Investiga la relación entre fuerza y elongación para determinar experimentalmente la constante elástica.',
+    icon: '🪀',
+    color: 'cyan',
+    gradient: 'from-cyan-500 to-blue-500',
+    topics: ['F = k·x', 'Constante elástica', 'Regresión lineal', 'Límite elástico'],
+    status: 'available'
   }
 ];
 
@@ -127,7 +138,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="bg-white rounded-xl p-4 shadow-md text-center"
           >
-            <div className="text-3xl font-bold text-blue-600">6</div>
+            <div className="text-3xl font-bold text-blue-600">7</div>
             <div className="text-sm text-gray-600">Prácticas</div>
           </motion.div>
           <motion.div
@@ -136,7 +147,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-xl p-4 shadow-md text-center"
           >
-            <div className="text-3xl font-bold text-green-600">6</div>
+            <div className="text-3xl font-bold text-green-600">7</div>
             <div className="text-sm text-gray-600">Disponibles</div>
           </motion.div>
           <motion.div
@@ -183,6 +194,7 @@ export const Home: React.FC = () => {
                   practice.id === 'tiro-parabolico' ? '/practica/tiro-parabolico' :
                   practice.id === 'pendulo' ? '/practica/pendulo' :
                   practice.id === 'newton' ? '/practica/newton' :
+                  practice.id === 'hooke' ? '/practica/hooke' :
                   `/practica/${practice.id}`
                 }>
                   <PracticeCard practice={practice} />

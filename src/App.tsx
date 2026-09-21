@@ -7,6 +7,7 @@ import FreeFallPractice from './pages/FreeFallPractice';
 import ProjectilePractice from './pages/ProjectilePractice';
 import PendulumPractice from './pages/PendulumPractice';
 import NewtonPractice from './pages/NewtonPractice';
+import HookePractice from './pages/HookePractice';
 import { AccessPage } from './pages/AccessPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
@@ -32,6 +33,7 @@ function App() {
         <Route path="/practica/tiro-parabolico" element={protectedPractice(<ProjectilePractice />)} />
         <Route path="/practica/pendulo" element={protectedPractice(<PendulumPractice />)} />
         <Route path="/practica/newton" element={protectedPractice(<NewtonPractice />)} />
+        <Route path="/practica/hooke" element={protectedPractice(<HookePractice />)} />
       </Routes>
     </HashRouter>
   );

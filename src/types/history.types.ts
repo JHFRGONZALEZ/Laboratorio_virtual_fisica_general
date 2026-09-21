@@ -1,4 +1,4 @@
-export type PracticeId = 'mru' | 'mruv' | 'caida-libre' | 'tiro-parabolico' | 'pendulo' | 'newton';
+export type PracticeId = 'mru' | 'mruv' | 'caida-libre' | 'tiro-parabolico' | 'pendulo' | 'newton' | 'hooke';
 
 export interface ExperimentHistory {
   id: string;
