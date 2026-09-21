@@ -5,7 +5,7 @@
 ![React](https://img.shields.io/badge/React-18-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Vite](https://img.shields.io/badge/Vite-6-purple)
-![Practices](https://img.shields.io/badge/Prácticas-6-green)
+![Practices](https://img.shields.io/badge/Prácticas-7-green)
 
 ## 🎯 Descripción
 
