@@ -1,15 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useLabStore } from '../../store/labStore';
 import { analyzeData } from '../../utils/physicsCalculations';
 import { AlertTriangle, CheckCircle, TrendingUp } from 'lucide-react';
 
 export const DataAnalysisPanel: React.FC = () => {
-  const { dataPoints, velocity } = useLabStore();
+  const { dataPoints, velocity, unlockAchievement } = useLabStore();
 
   const analysis = useMemo(() => {
     if (dataPoints.length < 2) return null;
     return analyzeData(dataPoints, velocity);
   }, [dataPoints, velocity]);
+
+  useEffect(() => {
+    if (analysis) unlockAchievement('analyst');
+  }, [analysis, unlockAchievement]);
 
   if (!analysis) {
     return (

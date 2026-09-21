@@ -55,7 +55,7 @@ const defaultAchievements: Achievement[] = [
   { id: 'first_experiment', title: 'Primer Experimento', description: 'Completaste tu primera medición', unlocked: false, icon: '🧪' },
   { id: 'analyst', title: 'Analista', description: 'Calculaste la pendiente correctamente', unlocked: false, icon: '📊' },
   { id: 'scientist', title: 'Científico', description: 'Generaste un reporte completo', unlocked: false, icon: '🔬' },
-  { id: 'explorer', title: 'Explorador', description: 'Completaste la fase de exploración', unlocked: false, icon: '🧭' },
+  { id: 'explorer', title: 'Explorador', description: 'Completaste la fase de exploración', unlocked: true, icon: '🧭' },
   { id: 'hypothesizer', title: 'Hipótesis', description: 'Formulaste una hipótesis', unlocked: false, icon: '💡' },
   { id: 'ten_measurements', title: 'Medidor Experto', description: 'Realizaste 10 mediciones', unlocked: false, icon: '📏' },
 ];

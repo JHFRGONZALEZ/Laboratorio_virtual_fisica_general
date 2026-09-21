@@ -5,7 +5,7 @@ import { generateReportHTML, ReportData } from '../../utils/exportReport';
 import { analyzeData } from '../../utils/physicsCalculations';
 
 export const ConclusionBuilder: React.FC = () => {
-  const { conclusions, setConclusions, hypothesis, dataPoints, velocity, questions, studentName, setStudentName } = useLabStore();
+  const { conclusions, setConclusions, hypothesis, dataPoints, velocity, questions, studentName, setStudentName, unlockAchievement } = useLabStore();
   const [text, setText] = useState(conclusions);
   const [generating, setGenerating] = useState(false);
 
@@ -36,6 +36,7 @@ export const ConclusionBuilder: React.FC = () => {
     };
 
     const html = generateReportHTML(reportData);
+    unlockAchievement('scientist');
     
     // Open in new window for printing
     const printWindow = window.open('', '_blank');
