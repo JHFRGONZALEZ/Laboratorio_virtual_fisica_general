@@ -101,6 +101,7 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
+            <img src="./unad-logo.png.png" alt="UNAD, ECBTI y CIP Dosquebradas" className="mx-auto mb-5 h-auto w-full max-w-xl object-contain" />
             <div className="inline-block mb-4">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl mx-auto">
                 <span className="text-white text-4xl">⚛️</span>
