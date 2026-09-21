@@ -21,6 +21,6 @@ export const useLabStoreEnergy = create<EnergyStore>((set, get) => ({
     const finished = position >= distance - 0.01;
     return { speed: finished ? calculateTheoreticalSpeed(state.initialHeight, state.gravity, state.friction) : speed, position: finished ? distance : position, time: state.time + dt, hasFinished: finished, isRunning: finished ? false : state.isRunning };
   }),
-  addDataPoint: () => set(state => { const point = calculateEnergyData(state.mass, state.initialHeight, state.gravity, state.friction); point.angle = state.angle; point.finalSpeed = state.hasFinished ? state.speed : point.theoreticalSpeed; point.kineticEnergy = 0.5 * state.mass * point.finalSpeed ** 2; point.mechanicalEnergy = point.kineticEnergy; return { dataPoints: [...state.dataPoints, point] }; }),
+  addDataPoint: () => set(state => { const point = calculateEnergyData(state.mass, state.initialHeight, state.gravity, state.friction); point.angle = state.angle; point.finalSpeed = state.hasFinished ? state.speed : point.theoreticalSpeed; point.kineticEnergy = 0.5 * state.mass * point.finalSpeed ** 2; point.mechanicalEnergy = point.kineticEnergy; const dataPoints = [...state.dataPoints, point]; return { dataPoints, phase: dataPoints.length >= 5 ? 'analysis' : state.phase }; }),
   clearDataPoints: () => set({ dataPoints: [] }), setPhase: phase => set({ phase }),
 }));
