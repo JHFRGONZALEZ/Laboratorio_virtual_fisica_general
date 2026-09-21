@@ -12,6 +12,12 @@ create index if not exists experiment_history_user_created_idx
 
 alter table public.experiment_history enable row level security;
 
+drop policy if exists "Students can read their own experiments"
+  on public.experiment_history;
+
+drop policy if exists "Students can create their own experiments"
+  on public.experiment_history;
+
 create policy "Students can read their own experiments"
   on public.experiment_history for select
   using (auth.uid() = user_id);
