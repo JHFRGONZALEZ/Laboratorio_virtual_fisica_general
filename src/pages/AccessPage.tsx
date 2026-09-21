@@ -24,7 +24,7 @@ export const AccessPage: React.FC = () => {
     setSending(true);
     const { error: authError } = await supabase.auth.signInWithOtp({
       email: email.trim().toLowerCase(),
-      options: { emailRedirectTo: `${window.location.origin}${window.location.pathname}#/` },
+      options: { emailRedirectTo: `${window.location.origin}${window.location.pathname}` },
     });
     setSending(false);
     if (authError) setError(authError.message);
