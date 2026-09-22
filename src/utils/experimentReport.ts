@@ -16,6 +16,20 @@ const fieldLabels: Record<string, string> = {
   friction: 'Fricción',
   springConstant: 'Constante elástica',
   angle: 'Ángulo',
+  position: 'Posición',
+  velocity: 'Velocidad',
+  acceleration: 'Aceleración',
+  force: 'Fuerza',
+  extension: 'Elongación',
+  period: 'Período',
+  periodSquared: 'Período al cuadrado',
+  potentialEnergy: 'Energía potencial',
+  kineticEnergy: 'Energía cinética',
+  mechanicalEnergy: 'Energía mecánica',
+  experimentalConstant: 'Constante experimental',
+  theoreticalConstant: 'Constante teórica',
+  percentError: 'Error porcentual',
+  rSquared: 'Coeficiente R²',
 };
 
 function renderValue(value: unknown): string {
