@@ -189,9 +189,9 @@ export const FreeFallPractice: React.FC = () => {
                 </ul>
                 <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                   <p className="text-xs text-orange-800 font-medium mb-1">Ecuaciones fundamentales:</p>
-                  <MathEquation math="y(t) = y_0 - \\frac{1}{2}gt^2" className="text-orange-700" />
+                  <MathEquation math={'y(t) = y_0 - \\frac{1}{2}gt^2'} className="text-orange-700" />
                   <MathEquation math="v(t) = -gt" className="text-orange-700" />
-                  <MathEquation math="t_{\\mathrm{caida}} = \\sqrt{\\frac{2y_0}{g}}" className="text-orange-700" />
+                  <MathEquation math={'t_{\\mathrm{caida}} = \\sqrt{\\frac{2y_0}{g}}'} className="text-orange-700" />
                 </div>
               </div>
 

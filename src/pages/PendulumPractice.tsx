@@ -197,9 +197,9 @@ export const PendulumPractice: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-800 mb-3">📖 Teoría del Péndulo</h3>
                 <p className="text-sm text-gray-700 mb-3">El <strong>péndulo simple</strong> oscila con un período que depende de su longitud y la gravedad:</p>
                 <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-200 mb-3">
-                  <MathEquation math="T = 2\\pi\\sqrt{\\frac{L}{g}}" className="text-indigo-800" />
-                  <MathEquation math="T^2 = \\frac{4\\pi^2}{g}L" className="text-indigo-800" />
-                  <MathEquation math="g = \\frac{4\\pi^2L}{T^2}" className="text-indigo-800" />
+                  <MathEquation math={'T = 2\\pi\\sqrt{\\frac{L}{g}}'} className="text-indigo-800" />
+                  <MathEquation math={'T^2 = \\frac{4\\pi^2}{g}L'} className="text-indigo-800" />
+                  <MathEquation math={'g = \\frac{4\\pi^2L}{T^2}'} className="text-indigo-800" />
                 </div>
                 <p className="text-sm text-gray-700">🎯 <strong>Objetivo:</strong> Medir el período para diferentes longitudes y calcular g experimentalmente.</p>
               </div>

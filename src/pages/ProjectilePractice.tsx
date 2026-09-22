@@ -200,9 +200,9 @@ export const ProjectilePractice: React.FC = () => {
                 </ul>
                 <div className="p-3 bg-green-50 rounded-lg border border-green-200">
                   <p className="text-xs text-green-800 font-medium mb-1">Ecuaciones:</p>
-                  <MathEquation math="x(t) = v_0\\cos(\\theta)t" className="text-green-700" />
-                  <MathEquation math="y(t) = v_0\\sin(\\theta)t - \\frac{1}{2}gt^2" className="text-green-700" />
-                  <MathEquation math="R = \\frac{v_0^2\\sin(2\\theta)}{g}" className="text-green-700" />
+                  <MathEquation math={'x(t) = v_0\\cos(\\theta)t'} className="text-green-700" />
+                  <MathEquation math={'y(t) = v_0\\sin(\\theta)t - \\frac{1}{2}gt^2'} className="text-green-700" />
+                  <MathEquation math={'R = \\frac{v_0^2\\sin(2\\theta)}{g}'} className="text-green-700" />
                 </div>
               </div>
             </div>

@@ -199,7 +199,7 @@ export const NewtonPractice: React.FC = () => {
                   </div>
                   <div className="p-3 bg-red-50 rounded-lg border border-red-200">
                     <p className="font-bold text-red-800">2ª Ley</p>
-                    <MathEquation math="\\sum F = ma" className="text-red-800" />
+                    <MathEquation math={'\\sum F = ma'} className="text-red-800" />
                     <p className="text-red-700">La aceleración es proporcional a la fuerza neta e inversamente proporcional a la masa.</p>
                   </div>
                   <div className="p-3 bg-red-50 rounded-lg border border-red-200">

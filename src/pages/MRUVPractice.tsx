@@ -164,7 +164,7 @@ export const MRUVPractice: React.FC = () => {
                   </ul>
                   <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
                     <p className="text-xs text-purple-800 font-medium mb-1">Ecuaciones fundamentales:</p>
-                    <MathEquation math="x(t) = x_0 + v_0t + \\frac{1}{2}at^2" className="text-purple-700" />
+                    <MathEquation math={'x(t) = x_0 + v_0t + \\frac{1}{2}at^2'} className="text-purple-700" />
                     <MathEquation math="v(t) = v_0 + at" className="text-purple-700" />
                   </div>
                 </div>
