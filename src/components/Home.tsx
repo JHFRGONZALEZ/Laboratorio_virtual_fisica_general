@@ -224,6 +224,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-4 text-center text-sm text-gray-600">
           <p>Laboratorio Virtual de Física General</p>
           <p className="mt-1 text-xs">Diseñado para aprendizaje activo • Simulaciones interactivas</p>
+                    <Link to="/acerca" className="mt-3 inline-block text-xs font-medium text-blue-700 hover:text-blue-900">Acerca del laboratorio</Link>
           <div className="mt-4 border-t border-gray-200 pt-4 text-xs text-gray-500">
             <p className="font-semibold text-gray-700">Desarrollado por Jhon Fredy González</p>
             <p>Magíster en Enseñanza de la Física • ECBTI • UNAD</p>

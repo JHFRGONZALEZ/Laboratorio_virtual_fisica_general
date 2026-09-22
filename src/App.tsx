@@ -9,6 +9,7 @@ import PendulumPractice from './pages/PendulumPractice';
 import NewtonPractice from './pages/NewtonPractice';
 import HookePractice from './pages/HookePractice';
 import EnergyPractice from './pages/EnergyPractice';
+import AboutPage from './pages/AboutPage';
 import { AccessPage } from './pages/AccessPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
@@ -26,6 +27,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+          <Route path="/acerca" element={<AboutPage />} />
         <Route path="/acceso" element={<AccessPage />} />
         <Route path="/historial" element={<ProtectedRoute><HistoryPage /></ProtectedRoute>} />
         <Route path="/practica/mru" element={protectedPractice(<MRUPractice />)} />
