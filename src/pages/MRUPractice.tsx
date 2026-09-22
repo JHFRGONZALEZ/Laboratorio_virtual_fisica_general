@@ -14,6 +14,7 @@ import { ComparisonView } from '../components/analysis/ComparisonView';
 import { ToastProvider } from '../components/ui/Toast';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X } from 'lucide-react';
 import { MathEquation } from '../components/ui/PhysicsFormula';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 const phases: { key: PedagogicalPhase; label: string; icon: React.ReactNode; description: string }[] = [
@@ -149,6 +150,11 @@ const MRUPractice: React.FC = () => {
         {phase === 'exploration' && (
           <div className="space-y-6">
             <MRUSimulator />
+            <div className="rounded-xl border border-blue-200 bg-blue-50 p-5">
+              <h2 className="mb-2 text-lg font-bold text-blue-800">¿Qué movimiento se estudia?</h2>
+              <p className="text-sm leading-6 text-blue-800">El movimiento rectilíneo uniforme describe un objeto que recorre una trayectoria recta con velocidad constante. En intervalos iguales de tiempo recorre distancias iguales y su aceleración es nula.</p>
+              <MathEquation math="x(t) = x_0 + vt" className="mt-2 text-blue-800" />
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <PositionTimeGraph />
               <VelocityTimeGraph />
