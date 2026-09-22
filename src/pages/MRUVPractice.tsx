@@ -7,6 +7,7 @@ import { useSimulationMRUV } from '../hooks/useSimulationMRUV';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X } from 'lucide-react';
 import { PedagogicalPhaseMRUV } from '../types/mruv.types';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
+import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
 
 const phases: { key: PedagogicalPhaseMRUV; label: string; icon: React.ReactNode; description: string }[] = [
   { key: 'exploration', label: 'Exploración', icon: <FlaskConical size={16} />, description: 'Experimenta libremente con la aceleración' },
@@ -133,6 +134,7 @@ export const MRUVPractice: React.FC = () => {
       </div>
 
       {/* Main Content */}
+      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={useLabStoreMRUV.getState().dataPoints.length} analysisReady={useLabStoreMRUV.getState().dataPoints.length >= 2} reportReady={currentPhaseIndex >= 4} accentClass="bg-purple-600" />
       <main className="container mx-auto px-4 py-4 pb-12">
         <div className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

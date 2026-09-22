@@ -6,6 +6,7 @@ import { analyzeNewtonData } from '../utils/newtonCalculations';
 import { PedagogicalPhaseNewton } from '../types/newton.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
+import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
 
 export const NewtonPractice: React.FC = () => {
   const { force, setForce, mass, setMass, friction, setFriction, isRunning, toggleRunning, reset, showForceVector, setShowForceVector, showAccelerationVector, setShowAccelerationVector, showFriction, setShowFriction, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStoreNewton();
@@ -151,6 +152,7 @@ export const NewtonPractice: React.FC = () => {
       </div>
 
       {/* Main Content */}
+      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={dataPoints.length} analysisReady={Boolean(analysis)} reportReady={currentPhaseIndex >= 4} accentClass="bg-red-600" />
       <main className="container mx-auto px-4 py-4 pb-12">
         {/* Phase: Exploration */}
         {phase === 'exploration' && (

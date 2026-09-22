@@ -7,6 +7,7 @@ import { analyzeDataFreeFall } from '../utils/freefallCalculations';
 import { PedagogicalPhaseFreeFall } from '../types/freefall.types';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
+import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
 
 export const FreeFallPractice: React.FC = () => {
   const { 
@@ -161,6 +162,7 @@ export const FreeFallPractice: React.FC = () => {
       </div>
 
       {/* Main Content */}
+      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={dataPoints.length} analysisReady={Boolean(analysis)} reportReady={currentPhaseIndex >= 4} accentClass="bg-orange-600" />
       <main className="container mx-auto px-4 py-4 pb-12">
         {/* Phase: Exploration */}
         {phase === 'exploration' && (

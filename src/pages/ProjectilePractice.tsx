@@ -6,6 +6,7 @@ import { analyzeProjectileMotion } from '../utils/projectileCalculations';
 import { PedagogicalPhaseProjectile } from '../types/projectile.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
+import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
 
 export const ProjectilePractice: React.FC = () => {
   const { initialVelocity, setInitialVelocity, angle, setAngle, gravity, setGravity, isRunning, toggleRunning, reset, hasLanded, showVelocityVector, setShowVelocityVector, showTrail, setShowTrail, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStoreProjectile();
@@ -151,6 +152,7 @@ export const ProjectilePractice: React.FC = () => {
       </div>
 
       {/* Main Content */}
+      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={dataPoints.length} analysisReady={Boolean(analysis)} reportReady={currentPhaseIndex >= 4} accentClass="bg-green-600" />
       <main className="container mx-auto px-4 py-4 pb-12">
         {/* Phase: Exploration */}
         {phase === 'exploration' && (

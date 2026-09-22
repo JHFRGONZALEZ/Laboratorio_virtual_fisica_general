@@ -1,3 +1,4 @@
+import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, BarChart3, Beaker, BookOpen, FileText, FlaskConical, Home, Menu, Pause, Play, Plus, RotateCcw, Trash2, X } from 'lucide-react';

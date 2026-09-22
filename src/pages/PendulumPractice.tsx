@@ -6,6 +6,7 @@ import { calculateTheoreticalPeriod, analyzePendulumData } from '../utils/pendul
 import { PedagogicalPhasePendulum } from '../types/pendulum.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
+import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
 
 export const PendulumPractice: React.FC = () => {
   const { length, setLength, gravity, setGravity, isRunning, toggleRunning, reset, showAngle, setShowAngle, showTrail, setShowTrail, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStorePendulum();
@@ -152,6 +153,7 @@ export const PendulumPractice: React.FC = () => {
       </div>
 
       {/* Main Content */}
+      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={dataPoints.length} analysisReady={Boolean(analysis)} reportReady={currentPhaseIndex >= 4} accentClass="bg-indigo-600" />
       <main className="container mx-auto px-4 py-4 pb-12">
         {/* Phase: Exploration */}
         {phase === 'exploration' && (
