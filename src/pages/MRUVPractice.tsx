@@ -18,7 +18,7 @@ const phases: { key: PedagogicalPhaseMRUV; label: string; icon: React.ReactNode;
 ];
 
 export const MRUVPractice: React.FC = () => {
-  const { phase, setPhase } = useLabStoreMRUV();
+  const { phase, setPhase, dataPoints } = useLabStoreMRUV();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useSimulationMRUV();
 
@@ -134,7 +134,7 @@ export const MRUVPractice: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={useLabStoreMRUV.getState().dataPoints.length} analysisReady={useLabStoreMRUV.getState().dataPoints.length >= 2} reportReady={currentPhaseIndex >= 4} accentClass="bg-purple-600" />
+      <PracticeProgress phaseIndex={currentPhaseIndex} phaseCount={phases.length} phaseLabel={phases[currentPhaseIndex].label} measurements={dataPoints.length} analysisReady={dataPoints.length >= 2} reportReady={currentPhaseIndex >= 4} accentClass="bg-purple-600" />
       <main className="container mx-auto px-4 py-4 pb-12">
         <div className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
