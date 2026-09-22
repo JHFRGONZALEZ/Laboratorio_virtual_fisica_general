@@ -13,6 +13,7 @@ import { AchievementPanel } from '../components/pedagogy/AchievementPanel';
 import { ComparisonView } from '../components/analysis/ComparisonView';
 import { ToastProvider } from '../components/ui/Toast';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X } from 'lucide-react';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 
 const phases: { key: PedagogicalPhase; label: string; icon: React.ReactNode; description: string }[] = [
@@ -197,10 +198,8 @@ const MRUPractice: React.FC = () => {
                   <li>• La gráfica v vs t es una línea horizontal</li>
                 </ul>
                 <div className="mt-4 p-3 bg-white rounded-lg border border-blue-200">
-                  <p className="text-sm font-mono text-center text-blue-800">
-                    <strong>Ecuación fundamental:</strong><br/>
-                    x(t) = x₀ + v · t
-                  </p>
+                  <p className="text-sm text-center font-medium text-blue-800">Ecuación fundamental:</p>
+                  <MathEquation math="x(t) = x_0 + vt" className="text-blue-800" />
                 </div>
               </div>
               <MRUSimulator />
@@ -295,7 +294,7 @@ const MRUPractice: React.FC = () => {
       <footer className="bg-white/60 border-t border-gray-200 py-4">
         <div className="container mx-auto px-4 text-center text-xs text-gray-500">
           <p>Laboratorio Virtual de Física General • Práctica 1: MRU</p>
-          <p className="mt-1">Diseñado para aprendizaje activo • x(t) = x₀ + v·t</p>
+          <p className="mt-1">Diseñado para aprendizaje activo • Movimiento rectilíneo uniforme</p>
         </div>
       </footer>
     </div>

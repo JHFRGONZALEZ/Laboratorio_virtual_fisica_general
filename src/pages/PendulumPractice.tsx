@@ -7,6 +7,7 @@ import { PedagogicalPhasePendulum } from '../types/pendulum.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 
 export const PendulumPractice: React.FC = () => {
   const { length, setLength, gravity, setGravity, isRunning, toggleRunning, reset, showAngle, setShowAngle, showTrail, setShowTrail, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStorePendulum();
@@ -196,11 +197,9 @@ export const PendulumPractice: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-800 mb-3">📖 Teoría del Péndulo</h3>
                 <p className="text-sm text-gray-700 mb-3">El <strong>péndulo simple</strong> oscila con un período que depende de su longitud y la gravedad:</p>
                 <div className="p-3 bg-indigo-50 rounded-lg border border-indigo-200 mb-3">
-                  <p className="text-sm font-mono text-indigo-800 text-center">
-                    T = 2π·√(L/g)<br/>
-                    T² = (4π²/g)·L<br/>
-                    g = 4π²·L/T²
-                  </p>
+                  <MathEquation math="T = 2\\pi\\sqrt{\\frac{L}{g}}" className="text-indigo-800" />
+                  <MathEquation math="T^2 = \\frac{4\\pi^2}{g}L" className="text-indigo-800" />
+                  <MathEquation math="g = \\frac{4\\pi^2L}{T^2}" className="text-indigo-800" />
                 </div>
                 <p className="text-sm text-gray-700">🎯 <strong>Objetivo:</strong> Medir el período para diferentes longitudes y calcular g experimentalmente.</p>
               </div>
@@ -232,7 +231,7 @@ export const PendulumPractice: React.FC = () => {
                   'Comprender el movimiento del péndulo simple',
                   'Relacionar longitud con período de oscilación',
                   'Calcular g experimentalmente',
-                  'Verificar la ecuación T = 2π·√(L/g)',
+                  'Verificar la relación entre período, longitud y gravedad',
                   'Analizar datos con regresión lineal',
                 ].map((obj, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-700">

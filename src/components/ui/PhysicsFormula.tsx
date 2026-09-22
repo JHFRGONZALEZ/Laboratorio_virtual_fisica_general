@@ -17,3 +17,5 @@ export const PhysicsFormula: React.FC<{ practiceId: PracticeId }> = ({ practiceI
   const formula = formulas[practiceId];
   return <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"><h3 className="mb-2 text-sm font-semibold text-slate-700">{formula.title}</h3><div className="overflow-x-auto rounded-lg bg-slate-50 px-3 py-2 text-slate-800">{formula.expressions.map(expression => <BlockMath key={expression} math={expression} />)}</div></section>;
 };
+
+export const MathEquation: React.FC<{ math: string; className?: string }> = ({ math, className = '' }) => <div className={`overflow-x-auto ${className}`}><BlockMath math={math} /></div>;

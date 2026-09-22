@@ -7,6 +7,7 @@ import { PedagogicalPhaseNewton } from '../types/newton.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 
 export const NewtonPractice: React.FC = () => {
   const { force, setForce, mass, setMass, friction, setFriction, isRunning, toggleRunning, reset, showForceVector, setShowForceVector, showAccelerationVector, setShowAccelerationVector, showFriction, setShowFriction, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStoreNewton();
@@ -197,7 +198,8 @@ export const NewtonPractice: React.FC = () => {
                     <p className="text-red-700">Un objeto permanece en reposo o MRU a menos que actúe una fuerza neta.</p>
                   </div>
                   <div className="p-3 bg-red-50 rounded-lg border border-red-200">
-                    <p className="font-bold text-red-800">2ª Ley (F = m·a)</p>
+                    <p className="font-bold text-red-800">2ª Ley</p>
+                    <MathEquation math="\\sum F = ma" className="text-red-800" />
                     <p className="text-red-700">La aceleración es proporcional a la fuerza neta e inversamente proporcional a la masa.</p>
                   </div>
                   <div className="p-3 bg-red-50 rounded-lg border border-red-200">

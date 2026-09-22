@@ -7,6 +7,7 @@ import { PedagogicalPhaseProjectile } from '../types/projectile.types';
 import { ArrowLeft, Home, Play, Pause, RotateCcw, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 
 export const ProjectilePractice: React.FC = () => {
   const { initialVelocity, setInitialVelocity, angle, setAngle, gravity, setGravity, isRunning, toggleRunning, reset, hasLanded, showVelocityVector, setShowVelocityVector, showTrail, setShowTrail, dataPoints, addDataPoint, removeDataPoint, clearDataPoints, phase, setPhase } = useLabStoreProjectile();
@@ -199,11 +200,9 @@ export const ProjectilePractice: React.FC = () => {
                 </ul>
                 <div className="p-3 bg-green-50 rounded-lg border border-green-200">
                   <p className="text-xs text-green-800 font-medium mb-1">Ecuaciones:</p>
-                  <p className="text-sm font-mono text-green-700">
-                    x(t) = v₀·cos(θ)·t<br/>
-                    y(t) = v₀·sin(θ)·t - ½·g·t²<br/>
-                    R = v₀²·sin(2θ)/g
-                  </p>
+                  <MathEquation math="x(t) = v_0\\cos(\\theta)t" className="text-green-700" />
+                  <MathEquation math="y(t) = v_0\\sin(\\theta)t - \\frac{1}{2}gt^2" className="text-green-700" />
+                  <MathEquation math="R = \\frac{v_0^2\\sin(2\\theta)}{g}" className="text-green-700" />
                 </div>
               </div>
             </div>

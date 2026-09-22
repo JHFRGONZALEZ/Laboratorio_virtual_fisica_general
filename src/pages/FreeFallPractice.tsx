@@ -8,6 +8,7 @@ import { PedagogicalPhaseFreeFall } from '../types/freefall.types';
 import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, Menu, X, Plus, Trash2 } from 'lucide-react';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 
 export const FreeFallPractice: React.FC = () => {
   const { 
@@ -188,11 +189,9 @@ export const FreeFallPractice: React.FC = () => {
                 </ul>
                 <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                   <p className="text-xs text-orange-800 font-medium mb-1">Ecuaciones fundamentales:</p>
-                  <p className="text-sm font-mono text-orange-700">
-                    y(t) = y₀ - ½·g·t²<br/>
-                    v(t) = -g·t<br/>
-                    t<sub>caída</sub> = √(2·y₀/g)
-                  </p>
+                  <MathEquation math="y(t) = y_0 - \\frac{1}{2}gt^2" className="text-orange-700" />
+                  <MathEquation math="v(t) = -gt" className="text-orange-700" />
+                  <MathEquation math="t_{\\mathrm{caida}} = \\sqrt{\\frac{2y_0}{g}}" className="text-orange-700" />
                 </div>
               </div>
 
@@ -433,7 +432,7 @@ export const FreeFallPractice: React.FC = () => {
       <footer className="bg-white/60 border-t border-gray-200 py-4">
         <div className="container mx-auto px-4 text-center text-xs text-gray-500">
           <p>Laboratorio Virtual de Física General • Práctica 3: Caída Libre</p>
-          <p className="mt-1">Diseñado para aprendizaje activo • y(t) = y₀ - ½·g·t²</p>
+          <p className="mt-1">Diseñado para aprendizaje activo • Movimiento bajo gravedad constante</p>
         </div>
       </footer>
     </div>

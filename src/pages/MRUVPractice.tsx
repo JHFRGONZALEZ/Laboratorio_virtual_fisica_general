@@ -8,6 +8,7 @@ import { ArrowLeft, Home, FlaskConical, BookOpen, Beaker, BarChart3, FileText, M
 import { PedagogicalPhaseMRUV } from '../types/mruv.types';
 import { SaveExperimentButton } from '../components/history/SaveExperimentButton';
 import { PracticeProgress } from '../components/pedagogy/PracticeProgress';
+import { MathEquation } from '../components/ui/PhysicsFormula';
 
 const phases: { key: PedagogicalPhaseMRUV; label: string; icon: React.ReactNode; description: string }[] = [
   { key: 'exploration', label: 'Exploración', icon: <FlaskConical size={16} />, description: 'Experimenta libremente con la aceleración' },
@@ -163,10 +164,8 @@ export const MRUVPractice: React.FC = () => {
                   </ul>
                   <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
                     <p className="text-xs text-purple-800 font-medium mb-1">Ecuaciones fundamentales:</p>
-                    <p className="text-sm font-mono text-purple-700">
-                      x(t) = x₀ + v₀·t + ½·a·t²<br/>
-                      v(t) = v₀ + a·t
-                    </p>
+                    <MathEquation math="x(t) = x_0 + v_0t + \\frac{1}{2}at^2" className="text-purple-700" />
+                    <MathEquation math="v(t) = v_0 + at" className="text-purple-700" />
                   </div>
                 </div>
               </div>
@@ -203,7 +202,7 @@ export const MRUVPractice: React.FC = () => {
       <footer className="bg-white/60 border-t border-gray-200 py-4">
         <div className="container mx-auto px-4 text-center text-xs text-gray-500">
           <p>Laboratorio Virtual de Física General • Práctica 2: MRUV</p>
-          <p className="mt-1">Diseñado para aprendizaje activo • x(t) = x₀ + v₀·t + ½·a·t²</p>
+          <p className="mt-1">Diseñado para aprendizaje activo • Movimiento con aceleración constante</p>
         </div>
       </footer>
     </div>
